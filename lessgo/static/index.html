@@ -13,107 +13,152 @@
 	<link href="css/admin.css" rel="stylesheet">
 </head>
 <body>
-<div class="warp">
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container"> 
-      <div class="nav-collapse collapse">
-      	<ul class="nav">
-      		<li class="active"><a href="javascript:viod(0);">示例 +</a></li>
-      		<li><a href="javascript:viod(0);">运营数据管理 +</a></li>
-      	</ul>
-      </div> 
-    </div>
-  </div><!--E navbar-inner-->
-  <div class="navsub">
-	<ul class="nav">
-		<li class="active"><a href="javascript:viod(0);">首页 </a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">示例模块</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">测试自由网址</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">多实体表单</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">统计数据</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">查看统计</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">数据录入</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="javascript:viod(0);">百度一下，呵呵</a></li>
-	</ul>
-  </div><!--E navsub-->
-  <div class="history"><i class="icon-tags"></i> 你查看过：<a href="javascript:viod(0);">示例模块</a> ， <a href="javascript:viod(0);">测试自由网址</a></div><!--E history-->
-</div><!--E navbar-->
+<div class="leftcon">
+	<div class="logo"><h1>内控管理系统</h1></div><!--E logo-->	
+	<div class="datewidget">今天是：2013.9.13      16:15:20</div><!--E datewidget-->
+	<div class="leftmenu">
+		<ul>
+			<li>
+				<a href="javascript:viod(0);">基础设置</a>
+				<dl>
+					<dd><a href="javascript:viod(0);">门店管理</a></dd>
+					<dd><a href="javascript:viod(0);">教室管理</a></dd>
+				</dl>
+			</li>
+			<li>
+				<a href="javascript:viod(0);">课程管理</a>
+				<dl>
+					<dd><a href="javascript:viod(0);">周排课管理</a></dd>
+					<dd><a href="javascript:viod(0);">课程时间段管理</a></dd>
+				</dl>
+			</li>
+			<li class="admin1"><a href="javascript:viod(0);">视频管理</a></li>
+			<li>
+				<a href="javascript:viod(0);">电话录音总览</a>
+				<dl>
+					<dd><a href="javascript:viod(0);">顾问通话总览</a></dd>
+					<dd><a href="javascript:viod(0);">Call Center</a></dd>
+					<dd><a href="javascript:viod(0);">老师通话总览</a></dd>
+				</dl>
+			</li>
+		</ul>
+	</div><!--E leftmenu-->
+</div><!--E leftcon-->
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span12">
+<div class="content">
+	<div class="head">
+		<div class="headerright">
+			<div class="right-text"><span class="user">你好，sara！</span></div><!--E right-text-->
+			<div class="right-text">
+				<a href="javascript:viod(0);">我的桌面</a>
+			</div><!--E right-text-->
+			<div class="right-text">
+				<a href="javascript:viod(0);">修改密码</a>
+			</div><!--E right-text-->
+			<div class="right-text">
+				<a href="javascript:viod(0);">其他后台管理<i class="icon"></i></a>
+				<div class="down-menu" style="display:none;">
+					<ul>
+						<li><a href="">Wooyou后台管理</a></li>
+					</ul>
+				</div><!--E down-menu-->
+			</div><!--E right-text-->
+			<div class="right-text">
+				<a href="javascript:viod(0);">退出</a>
+			</div><!--E right-text-->
+		</div><!--E headerright-->
+	</div><!--E head-->
+	
+	<div class="break">
+		<ul>
+		  <li><a href="javascript:viod(0);">基础设置</a> <span class="divider">/</span></li>
+		  <li><a href="javascript:viod(0);">课程管理</a> <span class="divider">/</span></li>
+		  <li class="active">门店管理</li>
+		</ul>
+	</div><!--E break-->
 
-    	<div class="block">
-    		<h4 class="title">示例数据</h4><!--E title-->
-    		<div class="cont">
-    			<div class="input-box text-center">
-    				<form class="form-inline">
-					 <div class="inline">名字的模糊查询：<input type="text" class="input-small"></div>
-					 <div class="inline">性别的确定查询：
-					 	<select>
-						  <option>请选择</option>
-						  <option>男</option>
-						  <option>女</option>
-						</select>
-					</div>
-					<div class="inline">所属学校：
-					 	<select>
-						  <option>请选择</option>
-						  <option>福州大学</option>
-						  <option>厦门大学</option>
-						</select>
-					</div>
-					<div class="inline">生日起始时间：<input type="text" class="input-small"></div>
-					<div class="inline">生日结束时间：<input type="text" class="input-small"></div>
-					 <p><button type="submit" class="btn btn-primary">搜索</button>
-					  <button type="submit" class="btn">重置</button></p>
-					</form>
-    			</div><!--E input-box-->
-    			<div class="table-box"></div><!--E table-box-->
-    		</div><!--E cont-->
-    	</div><!--E block-->  
+	<div class="wrap">
+		<div class="history">
+	 		<i class="icon-tags"></i> 你查看过：<a href="javascript:viod(0);">示例模块</a> ， <a href="javascript:viod(0);">测试自由网址</a>
+	 	</div><!--E history-->
 
-    	<div class="block" style="width:500px;">
-    		<h4 class="title">示例数据</h4><!--E title-->
-    		<div class="cont">
-    			<div class="input-box">
-    				<form class="form-horizontal">
-					  <div class="control-group">
-					    <label class="control-label">名字：</label>
-					    <div class="controls">
-					      <input type="text" placeholder="名字">
-					    </div>
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label">年龄：</label>
-					    <div class="controls">
-					      <input type="text" placeholder="年龄">
-					    </div>
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label">生日：</label>
-					    <div class="controls">
-					      <input type="text" placeholder="生日">
-					    </div>
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label">性别：</label>
-					    <div class="controls">					      
+	 	<div class="block">
+	 		<h4 class="title">
+	 			<i class="icon-table"></i>示例数据
+	 			<span class="iconright">
+	 				<!--点击收起的时候用这个<i class="icon-plus-sign"></i>-->
+	 				<i class="icon-minus-sign"></i>
+	 			</span>
+	 		</h4><!--E title-->
+	 		<div class="cont">
+	    			<div class="input-box text-center">
+	    				<form class="form-inline">
+						 <div class="inline">名字的模糊查询：<input type="text" class="input-small"></div>
+						 <div class="inline">性别的确定查询：
 						 	<select>
 							  <option>请选择</option>
 							  <option>男</option>
 							  <option>女</option>
 							</select>
+						</div>
+						<div class="inline">所属学校：
+						 	<select>
+							  <option>请选择</option>
+							  <option>福州大学</option>
+							  <option>厦门大学</option>
+							</select>
+						</div>
+						<div class="inline">生日起始时间：<input type="text" class="input-small"></div>
+						<div class="inline">生日结束时间：<input type="text" class="input-small"></div>
+						<div class="inline">
+							<button type="submit" class="btn btn-primary">搜索</button>
+						  	<button type="submit" class="btn">重置</button>
+						</div>
+						</form>
+	    			</div><!--E input-box-->
+	    			<div class="table-box">这里放表格哦！</div><!--E table-box-->
+	    		</div><!--E cont-->
+	 	</div><!--E block-->
+
+	 	<div class="block" style="width:500px;">
+	 		<h4 class="title">
+	 			<i class="icon-table"></i>示例数据
+	 			<span class="iconright">
+	 				<!--点击收起的时候用这个<i class="icon-plus-sign"></i>-->
+	 				<i class="icon-minus-sign"></i>
+	 			</span>
+	 		</h4><!--E title-->
+	 		<div class="cont">
+	    		<div class="input-box">
+					<form class="form-horizontal">
+						<div class="control-group">
+							<label class="control-label">名字：</label>
+							<div class="controls">
+								<input type="text" placeholder="名字">
+							</div>
+						</div>
+					    <div class="control-group">
+					        <label class="control-label">年龄：</label>
+						    <div class="controls">
+						        <input type="text" placeholder="年龄">
+						    </div>
 					    </div>
-					  </div>
+						<div class="control-group">
+						    <label class="control-label">生日：</label>
+						    <div class="controls">
+						      	<input type="text" placeholder="生日">
+						    </div>
+						</div>
+						<div class="control-group">
+						    <label class="control-label">性别：</label>
+						    <div class="controls">					      
+							 	<select>
+								  <option>请选择</option>
+								  <option>男</option>
+								  <option>女</option>
+								</select>
+						    </div>
+					    </div>
 					  <div class="control-group">
 					    <label class="control-label">创建时间：</label>
 					    <div class="controls">
@@ -163,16 +208,22 @@
 					    </div>
 					  </div>
 					</form>
-    			</div><!--E input-box-->
-    			<div class="table-box"></div><!--E table-box-->
-    		</div><!--E cont-->
-    	</div><!--E block-->  
+	    		</div><!--E input-box-->
+	    		<div class="table-box">这里放表格哦！</div><!--E table-box-->
+	    	</div><!--E cont-->
+	 	</div><!--E block--> 	
 
-    	<div class="block" style="width:500px;">
-    		<h4 class="title">示例数据</h4><!--E title-->
-    		<div class="cont">
-    			<div class="input-box">
-    				<form class="form-horizontal">
+		<div class="block" style="width:500px;">
+	 		<h4 class="title">
+	 			<i class="icon-table"></i>示例数据
+	 			<span class="iconright">
+	 				<!--点击收起的时候用这个<i class="icon-plus-sign"></i>-->
+	 				<i class="icon-minus-sign"></i>
+	 			</span>
+	 		</h4><!--E title-->
+			<div class="cont">
+				<div class="input-box">
+					<form class="form-horizontal">
 					  <div class="control-group">
 					    <label class="control-label">名字：</label>
 					    <div class="controls">
@@ -200,9 +251,9 @@
 					    </div>
 					  </div>
 					</form>
-    			</div><!--E input-box-->
-    			<div class="tab-box">
-    				<ul class="nav nav-tabs" id="myTab">
+				</div><!--E input-box-->
+				<div class="tab-box">
+					<ul class="nav nav-tabs" id="myTab">
 					  <li class="active"><a href="#Demo1">Demo1</a></li>
 					  <li><a href="#Demo2">Demo2</a></li>
 					</ul> 
@@ -336,16 +387,15 @@
 		    			</div><!--E input-box-->
 					  </div><!--E demo2-->
 					</div>
-    			</div><!--E tab-box-->
-    		</div><!--E cont-->
-    	</div><!--E block-->     
-    </div>
-  </div>
-</div>
-</div>
+				</div><!--E tab-box-->
+			</div><!--E cont-->
+		</div><!--E block--> 
+	</div><!--E wrap-->
+</div><!--E content-->
+
 <!--========Javascripts========--> 
-<script src="js/jquery.js"></script> 
-<script src="js/bootstrap.min.js"></script>	
+<script src="../../../../../Downloads/admin-html/js/jquery.js"></script>
+<script src="../../../../../Downloads/admin-html/js/bootstrap.min.js"></script>
 <script>
  $('#myTab a').click(function (e) {
   e.preventDefault();

@@ -2,12 +2,19 @@
 {{$model := .Model}}
 {{$id := getComponentId "formpanel" }}
 <div class="block formpanel" id="{{$id}}">
-    <h4 class="title">示例数据</h4><!--E title-->
+    <h4 class="title">
+        <i class="icon-table"></i>数据保存
+	 			<span class="iconright">
+	 				<!--点击收起的时候用这个<i class="icon-plus-sign"></i>-->
+	 				<i class="icon-minus-sign"></i>
+	 			</span>
+    </h4><!--E title-->
     <div class="cont">
         <div class="input-box">
             <form class="form-horizontal">
                 <div class="form-field" field-type="hidden" field-name="{{$entity.Pk}}" field-value="{{if $model}}{{$model.Id}}{{end}}">
                 {{range $elementIndex,$element := .Formpanel.Elements}}
+                    {{$value := ""}}
                 {{$value := getPropValue $model $element.Field}}
                 <div class="control-group form-field"
                      field-type="{{$element.Type}}"
@@ -26,7 +33,7 @@
                 {{end}}
                 <div class="control-group text-center">
                     <div class="controls">
-                        <a ref="javascript:void(0);" data-action="save" class="btn btn-primary">保存</a>
+                        <a href="javascript:void(0);" data-action="save" class="btn btn-primary">保存</a>
                         <a href="javascript:void(0);" data-action="reset" class="btn">重置</a>
                     </div>
                 </div>

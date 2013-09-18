@@ -10,7 +10,7 @@ var area = function(dom,desc,name,readonly,regionCode,callback){
 
     this.code= regionCode;
 
-    this.desc = desc+ "：";
+    this.desc = '<label class="control-label">'+desc+'：</label><div class="controls"></div>';
 
     this.name = name;
 
@@ -89,7 +89,7 @@ area.prototype = {
                     for(var i=0;i<data.regions.length;i++){
                         selectDom.append('<option value="'+data.regions[i].code+'">'+data.regions[i].name+'</option>');
                     }
-                    mythis.area.append(selectDom);
+                    mythis.area.find('.controls').append(selectDom);
 
                     if($(selectDom).index()==2){
                         $(selectDom).attr('data-field','');
@@ -108,7 +108,7 @@ area.prototype = {
                     mythis.callback();
                 }
             }else{
-                //console.log(data.reason)
+                console.log(data.reason)
             }
 
         });

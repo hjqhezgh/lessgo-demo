@@ -1,17 +1,24 @@
 {{$model := .Model}}
 {{$id := getComponentId "mutiformpanel" }}
 {{$mutiFormPanel := .MutiFormPanel }}
+<div class="block mutiformpanel"></div>
 <div class="block mutiformpanel" id="{{$id}}">
-    <h4 class="title">示例数据</h4>
+    <h4 class="title">
+        <i class="icon-table"></i>数据保存
+	 			<span class="iconright">
+	 				<!--点击收起的时候用这个<i class="icon-plus-sign"></i>-->
+	 				<i class="icon-minus-sign"></i>
+	 			</span>
+    </h4><!--E title-->
     <div class="cont">
         <form class="form-horizontal">
             <div class="input-box">
                     {{range $elementIndex,$element := .MutiFormPanel.PublicElement.Elements}}
+                    {{$value := getPropValue $model $element.Field}}
                     <div class="control-group form-field"
                          field-type="{{$element.Type}}"
                          field-desc="{{$element.Desc}}"
                          field-name="{{$element.Field}}"
-                         {{$value := getPropValue $model $element.Field}}
                          field-value="{{if $model}}{{dealHTMLEscaper $value }}{{end}}"
                          field-localData="{{$element.LocalData}}"
                          field-url="{{$element.Url}}"

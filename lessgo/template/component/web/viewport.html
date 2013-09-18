@@ -18,7 +18,7 @@
     <script src="/lessgo/static/js/lib/jqGrid/grid.locale-cn.js" type="text/javascript"></script>
     <script src="/lessgo/static/js/lib/jqGrid/jquery.jqGrid.min.js" type="text/javascript"></script>
     <script src="/lessgo/static/js/lib/jq-grid/jquery.grid.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="/lessgo/static/js/lib/jqGrid/css/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/lessgo/static/js/lib/jqGrid/css/ui.jqgrid.css"/>
 
     <!--form相关-->
     <!--地区联动控件-->
@@ -30,20 +30,26 @@
     <script type="text/javascript">
         //为fileupload插件打一个补丁
         jQuery.extend({
-            handleError:function(s,xhr,status,e){
-                if(s.error)
-                    s.error(xhr,status,e);
-                if(s.global)
-                    jQuery.event.trigger("ajaxError",[xhr,s,e]);
+            handleError: function (s, xhr, status, e) {
+                if (s.error)
+                    s.error(xhr, status, e);
+                if (s.global)
+                    jQuery.event.trigger("ajaxError", [xhr, s, e]);
             },
-            active:0,
-            httpSuccess:function(xhr){try{return!xhr.status&&location.protocol=="file:"||(xhr.status>=200&&xhr.status<300)||xhr.status==304||xhr.status==1223||jQuery.browser.safari&&xhr.status==undefined;}catch(e){}return false;}
+            active: 0,
+            httpSuccess: function (xhr) {
+                try {
+                    return!xhr.status && location.protocol == "file:" || (xhr.status >= 200 && xhr.status < 300) || xhr.status == 304 || xhr.status == 1223 || jQuery.browser.safari && xhr.status == undefined;
+                } catch (e) {
+                }
+                return false;
+            }
         });
     </script>
     <!--图片上传控件，依赖ajax文件上传控件-->
     <script type="text/javascript" src="/lessgo/static/js/lib/jq-form/imageuploader.js"></script>
     <!--html编辑框控件-->
-    <link rel="stylesheet" href="/lessgo/static/js/lib/kindeditor/4.1.7/themes/default/default.css" />
+    <link rel="stylesheet" href="/lessgo/static/js/lib/kindeditor/4.1.7/themes/default/default.css"/>
     <script charset="utf-8" src="/lessgo/static/js/lib/kindeditor/4.1.7/kindeditor-min.js"></script>
     <script charset="utf-8" src="/lessgo/static/js/lib/kindeditor/4.1.7/lang/zh_CN.js"></script>
     <!--表单渲染，依赖上面所有的表单控件-->
@@ -56,15 +62,93 @@
     <link href="/lessgo/static/css/admin.css" rel="stylesheet">
 </head>
 <body>
-<div class="warp">
-{{template "nav" .}}
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
-        {{.Content}}
-        </div>
+<div class="leftcon">
+    <div class="logo"><h1>内控管理系统</h1></div>
+    <!--E logo-->
+    <div class="datewidget">今天是：2013.9.13 16:15:20</div>
+    <!--E datewidget-->
+    <div class="leftmenu">
+        <ul>
+            <li>
+                <a href="javascript:viod(0);">基础设置</a>
+                <dl>
+                    <dd><a href="javascript:viod(0);">门店管理</a></dd>
+                    <dd><a href="javascript:viod(0);">教室管理</a></dd>
+                </dl>
+            </li>
+            <li>
+                <a href="javascript:viod(0);">课程管理</a>
+                <dl>
+                    <dd><a href="javascript:viod(0);">周排课管理</a></dd>
+                    <dd><a href="javascript:viod(0);">课程时间段管理</a></dd>
+                </dl>
+            </li>
+            <li class="admin1"><a href="javascript:viod(0);">视频管理</a></li>
+            <li>
+                <a href="javascript:viod(0);">电话录音总览</a>
+                <dl>
+                    <dd><a href="javascript:viod(0);">顾问通话总览</a></dd>
+                    <dd><a href="javascript:viod(0);">Call Center</a></dd>
+                    <dd><a href="javascript:viod(0);">老师通话总览</a></dd>
+                </dl>
+            </li>
+        </ul>
     </div>
+    <!--E leftmenu-->
 </div>
+<!--E leftcon-->
+
+<div class="content">
+<div class="head">
+    <div class="headerright">
+        <div class="right-text"><span class="user">你好，sara！</span></div>
+        <!--E right-text-->
+        <div class="right-text">
+            <a href="javascript:viod(0);">我的桌面</a>
+        </div>
+        <!--E right-text-->
+        <div class="right-text">
+            <a href="javascript:viod(0);">修改密码</a>
+        </div>
+        <!--E right-text-->
+        <div class="right-text">
+            <a href="javascript:viod(0);">其他后台管理<i class="icon"></i></a>
+
+            <div class="down-menu" style="display:none;">
+                <ul>
+                    <li><a href="">Wooyou后台管理</a></li>
+                </ul>
+            </div>
+            <!--E down-menu-->
+        </div>
+        <!--E right-text-->
+        <div class="right-text">
+            <a href="javascript:viod(0);">退出</a>
+        </div>
+        <!--E right-text-->
+    </div>
+    <!--E headerright-->
 </div>
+<!--E head-->
+
+<div class="break">
+    <ul>
+        <li><a href="javascript:viod(0);">基础设置</a> <span class="divider">/</span></li>
+        <li><a href="javascript:viod(0);">课程管理</a> <span class="divider">/</span></li>
+        <li class="active">门店管理</li>
+    </ul>
+</div>
+<!--E break-->
+
+<div class="wrap">
+<div class="history">
+    <i class="icon-tags"></i> 你查看过：<a href="javascript:viod(0);">示例模块</a> ， <a href="javascript:viod(0);">测试自由网址</a>
+</div>
+<!--E history-->
+{{.Content}}
+</div>
+<!--E wrap-->
+</div>
+<!--E content-->
 </body>
 </html>
