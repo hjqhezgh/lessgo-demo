@@ -1,0 +1,39 @@
+/*!
+ * @名称:  admin
+ * @功能:  自定义样式
+ * @作者:  Rachel
+ * @版本:  1.0.0
+*/
+body{background:url(../img/fullbg.jpg); font-family: "microsoft yahei";}
+input, button, select, textarea{ font-family: "microsoft yahei";}
+ul,li{ list-style:none;margin:0; padding:0;}
+
+.warp .navbar-inner{border-radius:0;min-height:50px;box-shadow:none;border-bottom:0;}
+.warp .nav-collapse li a{display:block;padding:10px 15px;color:#333;}
+.warp .nav-collapse li a:hover{background:#73a6e5;color:#fff;text-decoration:none;}
+.warp .navbar-inner .nav{margin-top:5px;}
+.warp .navbar-inner .nav > li{margin-left:10px;}
+.warp .navbar-inner .nav > li > a{text-shadow:none;}
+.warp .navbar-inner .nav > .active > a,.warp .navbar-inner .nav > .active > a:hover,.warp .navbar-inner .nav > .active > a:focus{background:#73a6e5;color:#fff;box-shadow:none;}
+.navsub{background:url(../img/navbg.jpg);min-height:34px;border-bottom:1px solid #5c8dc9;border-top:1px solid #5c8dc9;}
+.navsub .nav{margin:0 0 0 30px;}
+.navsub .nav > li > a{font-size:13px;text-shadow:none;color:#fff; padding:7px 15px;}
+.navsub .divider-vertical{height:25px;margin-top:5px;border-left:0;}
+.history{padding-left:30px;line-height:45px;background-image: linear-gradient(to bottom, #F7F7F7, #ebeceb);height:45px;border-bottom:1px solid #ccc;box-shadow:0 1px 4px rgba(255, 255, 255, 1);}
+.history i{margin:3px 0 0 0;}
+.block{background:#eaeaea;border:4px solid #d5d5d5;margin:10px;width:auto;}
+.block h4{font-size:14px;margin:0;font-weight:400;background-image: linear-gradient(to bottom, #F7F7F7, #ebeceb); height:40px;line-height:40px;text-indent:20px;border:1px solid #ccc;box-shadow:0 1px 4px rgba(255, 255, 255, 1);}
+.block .cont{border:1px solid #ccc;border-top:0;padding:10px;}
+.input-box{padding:10px 0;}
+.input-box .inline{display:inline-block;padding:3px 0;}
+.input-box input,.input-box select{margin-right:10px;width:auto;}
+.input-box p{padding:20px 0 0 0;}
+.input-box .form-horizontal .control-label{width:100px;}
+.input-box .form-horizontal .controls{margin-left:20px;}
+.table-box{padding:10px;}
+.tab-box .tab-content{background:#f8f8f8;border:1px solid #ccc;border-top:0;padding:20px;}
+.tab-box .nav{margin-bottom:0;}
+.tab-box .nav-tabs{border-bottom-color:#ccc;}
+.tab-box .nav-tabs > li > a{border-radius:0;background-image: linear-gradient(to bottom, #F7F7F7, #ebeceb);border-color:#ccc;}
+.tab-box .nav-tabs > .active > a,.tab-box .nav-tabs > .active > a:hover,.tab-box .nav-tabs > .active > a:focus{background:#f8f8f8;border-color:#ccc #ccc transparent;}
+.tab-box .nav-tabs > li > a,.tab-box .nav-pills > li > a{margin-right:-1px; padding:10px 20px;}
