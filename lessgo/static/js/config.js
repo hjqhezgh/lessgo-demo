@@ -38,7 +38,7 @@ define(function (require, exports, module) {
             },
             'jq-ui':{//时间控件、部分动画效果
                 src: productUrl + '/lib/jq-ui/1.10.3/jquery-ui-1.10.3.custom.min.js',
-                deps: ['jquery',productUrl + '/lib/jq-ui/1.10.3/css/redmond/jquery-ui-1.10.3.custom.min.css','jq-ui-i18n']
+                deps: ['jquery','jq-ui-i18n']
             },
             'jq-ui-i18n':{//时间控件、部分动画效果
                 src: productUrl + '/lib/jq-ui/1.10.3/jquery.ui.datepicker-zh-CN.js',

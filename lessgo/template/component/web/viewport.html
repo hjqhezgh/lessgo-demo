@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>配置化工程</title>
     <script src="/lessgo/static/js/sea.js" id="seajsnode" data-config="config"></script>
+    <link href="/lessgo/static/js/lib/jq-ui/1.10.3/css/redmond/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
     <link href="/lessgo/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/lessgo/static/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/lessgo/static/css/admin.css" rel="stylesheet">
@@ -88,49 +89,47 @@
     </li>
 </script>
 <script type="text/javascript">
-    /*
-    var menus = [
-        {
-            id : 1,
-            text : '基础设置',
-            icon : '',
-            url : '',
-            children : [
-                {
-                    id : 101,
-                    text : '门店管理',
-                    icon : '',
-                    url : '/web/center'
-                },
-                {
-                    id : 102,
-                    text : '教室管理',
-                    icon : '',
-                    url : '/web/room'
-                }
-            ]
-        },
-        {
-            id : 2,
-            text : '视频管理',
-            icon : '',
-            url : '/web/video',
-            children : [
-            ]
+    seajs.use(['jquery','juicer'],function(){
+        var menus = [
+            {
+                id : 1,
+                text : '基础设置',
+                icon : '',
+                url : '',
+                children : [
+                    {
+                        id : 101,
+                        text : '门店管理',
+                        icon : '',
+                        url : '/web/center'
+                    },
+                    {
+                        id : 102,
+                        text : '教室管理',
+                        icon : '',
+                        url : '/web/room'
+                    }
+                ]
+            },
+            {
+                id : 2,
+                text : '视频管理',
+                icon : '',
+                url : '/web/video',
+                children : [
+                ]
+            }
+        ];
+
+
+        for (var i=0;i<menus.length;i++){
+            $('.leftmenu').find('ul').append(juicer($('#menuItem').html(),menus[i]));
         }
-    ];
 
+        var now = new Date();
+        $('.datewidget').html('当前时间：'+now.getFullYear()+'.'+(now.getMonth()+1)+'.'+now.getDate()+' '+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds());
+    });
 
-    for (var i=0;i<menus.length;i++){
-        $('.leftmenu').find('ul').append(juicer($('#menuItem').html(),menus[i]));
-    }*/
-</script>
-
-<script type="text/javascript">
-    /*
-    var now = new Date();
-    $('.datewidget').html('当前时间：'+now.getFullYear()+'.'+(now.getMonth()+1)+'.'+now.getDate()+' '+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds());
-    */
 </script>
 </body>
 </html>
