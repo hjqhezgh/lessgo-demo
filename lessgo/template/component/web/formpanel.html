@@ -44,14 +44,16 @@
 </div>
 
 <script type="text/javascript">
-    $('#{{$id}}').form({
-        saveUrl : '/{{.Terminal}}/{{.Entity.Id}}/save?componentId={{.Formpanel.Id}}',
-        successCallback : function(data){
-            alert('保存成功');
-            window.close();
-        },
-        failCallback : function(data){
-            alert(data.msg);
-        }
+    seajs.use('lessgo-form',function(){
+        $('#{{$id}}').form({
+            saveUrl : '/{{.Terminal}}/{{.Entity.Id}}/save?componentId={{.Formpanel.Id}}',
+            successCallback : function(data){
+                alert('保存成功');
+                window.close();
+            },
+            failCallback : function(data){
+                alert(data.msg);
+            }
+        });
     });
 </script>
