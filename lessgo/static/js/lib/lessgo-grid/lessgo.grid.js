@@ -30,6 +30,11 @@ jQuery.fn.grid = function (opts) {
             viewrecords: true,
             onSelectRow: function (id) {
                 lastId = id;
+                //todo 表格多选框效果，有空了再做吧
+                /*
+                $('#' + opts.tableId).find('[data-action=gird-checkbox]').prop('checked',false);
+                $('#' + opts.tableId).find('[data-action=gird-checkbox][value='+id+']').prop('checked',true);
+                */
             },
             loadComplete: function () {
                 lastId = 0;
@@ -100,6 +105,13 @@ jQuery.fn.grid = function (opts) {
             }
         }
 
+        //todo 表格多选框效果，有空了再做吧
+        /*
+        $('#' + opts.tableId).on('click','input[data-action=gird-checkbox]',function(){
+            if($(this).prop('checked')){
+                jQuery('#' + opts.tableId).jqGrid('setSelection',$(this).val(),false)
+            }
+        });*/
 
         this.renderSearchForm();
     }
@@ -234,6 +246,7 @@ jQuery.fn.grid = function (opts) {
         this.find('a[data-action=reset]').click(function(){
             _this.find('form')[0].reset();
         });
+
     }
 
     this.render();

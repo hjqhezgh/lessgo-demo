@@ -7,7 +7,7 @@
         <search field="birthday" searchType="ge" inputType="date" desc="生日起始时间"/>
         <search field="birthday" searchType="le" inputType="datetime" desc="生日结束时间"/>
 
-        <column field="name" desc="名字"/>
+        <column field="name" desc="名字" linkType="currentPage" url="http://www.baidu.com" loadParamName="name" loadParamValue="this"/>
         <column field="age" desc="年龄"/>
         <column field="birthday" desc="生日"/>
         <column field="create_time" desc="创建时间"/>
