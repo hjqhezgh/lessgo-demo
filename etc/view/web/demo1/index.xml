@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewport>
+    <!--面包屑-->
+    <crumbs>
+        <crumb text="基础设置" url="/"/>
+        <crumb text="基础设置" url="/"/>
+        <crumb text="基础设置" currentPage="true"/>
+    </crumbs>
+
     <gridpanel entity="demo1" pageSize="20" title="示例数据" id="grid" width="1200" height="250">
         <search field="name" searchType="like" inputType="text" desc="名字的模糊查询"/>
         <search field="sex" searchType="eq" inputType="localSelect" desc="性别的确定查询" localData="[{desc:'男',value:'男'},{desc:'女',value:'女'}]"/>
