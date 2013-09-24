@@ -28,6 +28,8 @@ func main() {
 
 	port,_ := strconv.Atoi(portString)
 
+	http.Handle("/json/", http.FileServer(http.Dir("../static")))
+
 	http.Handle("/", r)
 
 	fmt.Println("服务器监听",portString,"端口")
