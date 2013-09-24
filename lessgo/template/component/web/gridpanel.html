@@ -16,7 +16,7 @@
         <div class="input-box text-center">
             {{if compareInt .SearchLength 0 "gt" }}
             <form class="form-inline">
-                {{range $searchIndex,$search := .CustomGridPanel.Searchs}}
+                {{range $searchIndex,$search := .Gridpanel.Searchs}}
                 <div class="inline form-field"
                      field-desc="{{$search.Desc}}"
                      field-name="{{$search.Field}}"
@@ -58,7 +58,10 @@
             "index" : '{{$column.Field}}',
             "width":70,
             "sortable":false,
-            formatter:function(cellvalue, options, rowObject){
+            {{if compareString $column.Hidden "true"}}
+            "hidden" : true,
+            {{end}}
+            "formatter":function(cellvalue, options, rowObject){
                 var newValue = cellvalue;
 
                 {{if compareString $column.Format "" }}
@@ -72,7 +75,7 @@
                 {{end}}
 
                 {{if compareString $column.LinkType "currentPage"}}
-                newValue = "<a style='color:blue;text-decoration:underline;' href='{{$column.Url}}{{if compareString $column.LoadParamName "" }}{{else}}?{{ $column.LoadParamName}}="{{if compareString $column.LoadParamValue "id" }}+options.rowId+{{else}}+newValue+{{end}}{{end}}"'>"+newValue+"</a>"
+                newValue = "<a style='color:blue;text-decoration:underline;' href='{{$column.Url}}{{if compareString $column.LoadParamName "" }}{{else}}?{{ $column.LoadParamName}}="{{if compareString $column.LoadParamValue "id" }}+options.rowId+{{else}}{{if compareString $column.LoadParamValue "this"}}+newValue+{{else}}+rowObject[{{$column.LoadParamValue}}]+{{end}}{{end}}{{end}}"'>"+newValue+"</a>"
                 {{end}}
 
                 return newValue;
@@ -91,10 +94,17 @@
         {{end}}
         {{end}}
 
+        var dataUrl = '/{{.Terminal}}/{{.Entity.Id}}/page?componentId={{.Gridpanel.Id}}'
+        {{if compareString .Gridpanel.LoadUrl "true"}}
+        if(document.URL.lastIndexOf('?')>-1){
+            dataUrl = dataUrl + "&"+ document.URL.substring(document.URL.lastIndexOf('?')+1,document.URL.length-1);
+        }
+        {{end}}
+
         $('#{{$id}}').grid({
             tableId : '{{$tableId}}',
             pageId : '{{$pageId}}',
-            dataurl:'/{{.Terminal}}/{{.Entity.Id}}/page?componentId={{.Gridpanel.Id}}',
+            dataurl: dataUrl,
             addurl:'/{{$terminal}}/{{$entity.Id}}/add',
             modifyurl:'/{{$terminal}}/{{$entity.Id}}/modify/',
             deleteurl:'/{{$terminal}}/{{$entity.Id}}/delete/',

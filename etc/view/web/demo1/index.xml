@@ -7,15 +7,16 @@
         <crumb text="基础设置" currentPage="true"/>
     </crumbs>
 
-    <gridpanel entity="demo1" pageSize="20" title="示例数据" id="grid" width="1200" height="250">
+    <gridpanel entity="demo1" pageSize="1" title="示例数据" id="grid" width="1200" height="250">
         <search field="name" searchType="like" inputType="text" desc="名字的模糊查询"/>
         <search field="sex" searchType="eq" inputType="localSelect" desc="性别的确定查询" localData="[{desc:'男',value:'男'},{desc:'女',value:'女'}]"/>
         <search field="sid" searchType="eq" inputType="remoteSelect" desc="所属学校" url="/web/school/alldata" valueField="sid" descField="name" />
         <search field="birthday" searchType="ge" inputType="date" desc="生日起始时间"/>
         <search field="birthday" searchType="le" inputType="datetime" desc="生日结束时间"/>
 
-        <column field="name" desc="名字" linkType="currentPage" url="http://www.baidu.com" loadParamName="name" loadParamValue="this"/>
+        <column field="name" desc="名字" linkType="currentPage" url="http://www.baidu.com" loadParamName="name" loadParamValue="3"/>
         <column field="age" desc="年龄"/>
+        <column field="sid" desc="" hidden="true"/>
         <column field="birthday" desc="生日"/>
         <column field="create_time" desc="创建时间"/>
         <column field="state" desc="状态"  format="[{desc:'啊1啊',value:'1'},{desc:'呵呵',value:'0'}]"/>
@@ -30,7 +31,7 @@
         <action desc="自定义按钮" action="custom" url="http://www.baidu.com"/>
     </gridpanel>
 
-    <customgridpanel url="/json/testcustomgridpanel.json" pageSize="2" title="示例数据" id="grid1" width="1200" height="250">
+    <customgridpanel url="/json/testcustomgridpanel.json" pageSize="2" title="示例数据" id="grid1" width="1200" height="250" loadUrl="true">
         <column field="age" desc="年龄"/>
         <column field="birthday" desc="生日"/>
     </customgridpanel>

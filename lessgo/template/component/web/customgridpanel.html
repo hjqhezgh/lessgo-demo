@@ -57,7 +57,29 @@
             "name" : '{{$column.Field}}',
             "index" : '{{$column.Field}}',
             "width":70,
-            "sortable":false
+            "sortable":false,
+            {{if compareString $column.Hidden "true"}}
+            "hidden" : true,
+            {{end}}
+            "formatter":function(cellvalue, options, rowObject){
+                var newValue = cellvalue;
+
+                {{if compareString $column.Format "" }}
+                {{else}}
+                var formatObject = eval('('+"{{$column.Format}}"+')');
+                for(var i=0;i<formatObject.length;i++){
+                    if(formatObject[i].value == newValue){
+                        newValue = formatObject[i].desc;
+                    }
+                }
+                {{end}}
+
+                {{if compareString $column.LinkType "currentPage"}}
+                    newValue = "<a style='color:blue;text-decoration:underline;' href='{{$column.Url}}{{if compareString $column.LoadParamName "" }}{{else}}?{{ $column.LoadParamName}}="{{if compareString $column.LoadParamValue "id" }}+options.rowId+{{else}}{{if compareString $column.LoadParamValue "this"}}+newValue+{{else}}+rowObject[{{$column.LoadParamValue}}]+{{end}}{{end}}{{end}}"'>"+newValue+"</a>"
+                {{end}}
+
+                return newValue;
+            }
         });
         {{$id}}ColumnNames.push('{{$column.Desc}}');
         {{end}}
@@ -72,10 +94,17 @@
         {{end}}
         {{end}}
 
+        var dataUrl = '{{.CustomGridPanel.Url}}?componentId={{.CustomGridPanel.Id}}'
+        {{if compareString .CustomGridPanel.LoadUrl "true"}}
+        if(document.URL.lastIndexOf('?')>-1){
+            dataUrl = dataUrl + "&"+ document.URL.substring(document.URL.lastIndexOf('?')+1,document.URL.length-1);
+        }
+        {{end}}
+
         $('#{{$id}}').grid({
             tableId : '{{$tableId}}',
             pageId : '{{$pageId}}',
-            dataurl:'{{.CustomGridPanel.Url}}',
+            dataurl:dataUrl,
             colNames:{{$id}}ColumnNames,
             width:{{$id}}Width,
             height:{{.CustomGridPanel.Height}},
