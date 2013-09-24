@@ -3,7 +3,7 @@
 {{$tableId := getComponentId "table" }}
 {{$pageId := getComponentId "page" }}
 {{$terminal := .Terminal }}
-<div class="block gridpanel" id="{{$id}}" style="width: {{.Gridpanel.Width}}px;">
+<div class="block gridpanel" id="{{$id}}" style="width: {{.CustomGridPanel.Width}}px;">
     <h4 class="title">
         <i class="icon-table"></i>{{.CustomGridPanel.Title}}
 	 			<span class="iconright">
@@ -14,6 +14,7 @@
 
     <div class="cont">
         <div class="input-box text-center">
+            {{if compareInt .SearchLength 0 "gt" }}
             <form class="form-inline">
                 {{range $searchIndex,$search := .CustomGridPanel.Searchs}}
                 <div class="inline form-field"
@@ -33,6 +34,7 @@
                     <a href="javascript:void(0)" data-action="reset"  class="btn">重置</a>
                 </div>
             </form>
+            {{end}}
 
             <div class="table-box">
                 <table id="{{$tableId}}"></table>
